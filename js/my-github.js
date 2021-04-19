@@ -1,11 +1,10 @@
 // Write code here to communicate with Github
-function getGithubRepos() {
+function getGithubRepos(userGithub) {
   //Cambiando el id de la secction #about al #github para que solo fucione al hacer click en My Github y no cambie los demas formatos.
   let newIdSection = document.getElementById("about");
   newIdSection.id = "github";
   //Variables para acceder a los tag del html.
   let nameGitUser = document.querySelector("#github h1");
-  let userGithub = "ronardj01";
   nameGitUser.innerText = userGithub;
   let url = `https://api.github.com/users/${userGithub}/repos`;
 
@@ -42,5 +41,5 @@ let MyGithubBtn = document.querySelector(
 
 MyGithubBtn.addEventListener("click", event => {
   event.preventDefault();
-  getGithubRepos();
+  getGithubRepos("ronardj01");
 });
